@@ -1,0 +1,18 @@
+$bg-main: #f4f2ee;
+$bg-sec:#f9fafb;
+$bg-three: #fcfcfc;
+$orange: #f29724;
+$green: #21ba75;
+$blue: #1d4ed8;
+$gray: rgb(107 114 128);
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    scroll-behavior: smooth;
+    margin: 0;
+    background-color: $bg-main;
+}

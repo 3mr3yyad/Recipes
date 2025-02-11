@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+$bg-main: #f4f2ee;
+$bg-sec:#f9fafb;
+$bg-three: #fcfcfc;
+$orange: #f29724;
+$green: #21ba75;
+$green2: #059669;
+$blue: #1d4ed8;
+$gray: rgb(107, 114, 128);
+$fgray: rgba(107, 114, 128, 0.3);
+$w-full: 100%;
+$transition:all 0.3s;
+$shadow1: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+$shadow2: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+
+@mixin font($size, $weight ){
+    font-family: cursive;
+    font-size: $size;
+    line-height: 1.75rem;
+    font-weight: $weight;
+}
+
+@mixin btn($border, $color ){
+    border: $border ;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    color: $color;
+}
+
+header{
+    margin-left: 20%;
+    margin-bottom: 1rem;
+    h1{
+        font-family: Pacifico,cursive;
+        font-size: 2.25rem;
+        font-weight: 700;
+        background-image: linear-gradient(to right, $orange, #ca1023c4, #c90519);
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 0;
+    }
+    ul{
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $fgray;
+        margin-top: 0;
+        padding-bottom: 0.5rem;
+        li{
+            margin: 2rem 1rem 0 0;
+            a{
+                text-decoration: none;
+                @include btn(0.5px solid $gray, $gray );
+            @include font(1rem, 500);
+            margin: 1rem 0.5rem 0 0;
+            box-shadow: $shadow1;
+            transition: $transition;
+            &:hover{
+                box-shadow: $shadow2;
+                background-color: $bg-sec;
+            }
+            }
+        }
+    }
+}
+
+.active{
+    background: black;
+    color: white;
+    &:hover{
+        background: black;
+    }
+}

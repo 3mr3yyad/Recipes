@@ -1,0 +1,101 @@
+$bg-main: #f4f2ee;
+$bg-sec:#f9fafb;
+$bg-three: #fcfcfc;
+$orange: #f29724;
+$green: #21ba75;
+$blue: #1d4ed8;
+$gray: rgba(107, 114, 128, 0.5);
+$w-full: 100%;
+$shadow: 0 10px 15px -3px;
+
+@mixin active(){
+    font-weight: 600;
+    background-color: $orange;
+                box-shadow: $shadow $orange;
+                color: $bg-sec;
+                border: $orange;
+                a{
+                    color: $bg-sec;
+                }
+}
+@mixin font(){
+    font-family: cursive;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    
+}
+
+.sidebar{
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 17%;
+    height: 100vh;
+    background-color: $bg-sec;
+    margin: 0;
+    padding: 1rem;
+    img{
+        width: $w-full;
+    }
+    ul{
+        padding-left: 0%;
+        margin: 0;
+        line-height: 1.5;
+        list-style-image: url('../../assets/images/meal.svg');
+        list-style-position: inside;
+        @include font();
+        li{
+            border: 0.5px solid $gray;
+            border-radius: 10px;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            a{
+                text-decoration-line: none;
+                color: black;
+            }
+            &:first-child{
+                @include active()
+                
+            }
+            &:hover{
+                box-shadow: none;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+
+    button.minibar{
+        display: none;
+    }
+
+    @media screen and (max-width: 640px) {
+        .sidebar{
+            width: 0%;
+            transition: all 0.3s;
+            display: none;
+        }
+        button.minibar{
+            display: block;
+            z-index: 50;
+            position: fixed;
+            top: 2rem;
+            left: 1rem;
+            background-color: $bg-sec;
+            width: 3rem;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            img{
+                width: 100%;
+            }
+        }
+        .show{
+            display: block;
+        }
+    }

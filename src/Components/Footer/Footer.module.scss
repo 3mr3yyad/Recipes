@@ -1,0 +1,64 @@
+$bg-main: #f4f2ee;
+$bg-sec:#f9fafb;
+$bg-three: #fcfcfc;
+$orange: #f29724;
+$green: #21ba75;
+$blue: #1d4ed8;
+$gray: rgb(107, 114, 128);
+$fgray: rgba(107, 114, 128, 0.3);
+$w-full: 100%;
+
+@mixin font($size, $weight ){
+    font-family: cursive;
+    font-size: $size;
+    line-height: 1.75rem;
+    font-weight: $weight;
+}
+
+footer{
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: $bg-three;
+    .container{
+        @include font(1.5rem, 700);
+        width: 80%;
+        margin: auto;
+        .child1{
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $fgray;
+            a{
+                color: #000;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                img{
+                    width: 3rem;
+                    margin-right: 1rem;
+                }
+            }
+            .route{
+                color: $blue;
+            }
+        }
+        .child2{
+            padding: 2rem 0;
+            text-align: center;
+            span{
+                margin: auto;
+                @include font(1rem, 500);
+                color: $gray;
+                a{
+                    text-decoration: none;
+                    color: $gray;
+                }
+            }
+        }
+    }
+}
+
+// 1.125rem

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+$bg-main: #f4f2ee;
+$bg-sec:#f9fafb;
+$bg-three: #fcfcfc;
+$orange: #f29724;
+$green: #21ba75;
+$green2: #059669;
+$blue: #1d4ed8;
+$gray: rgb(107, 114, 128);
+$fgray: rgba(107, 114, 128, 0.3);
+$w-full: 100%;
+$transition:all 0.3s;
+$shadow1: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+$shadow2: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+
+@mixin font($size, $weight ){
+    font-family: cursive;
+    font-size: $size;
+    line-height: 1.75rem;
+    font-weight: $weight;
+}
+
+@mixin btn($border, $color ){
+    border: $border ;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    color: $color;
+}
+
+section{
+    margin-left: 20%;
+    margin-bottom: 5rem;
+    h1{
+        @include font(3rem, 600);
+        font-family: Pacifico,cursive;
+        color: black;
+        margin-bottom: 2rem;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 3rem;
+        .child1{
+            width: 36%;
+            img{
+                width: 100%;
+                border-radius: 1rem;
+            }
+            .inner{
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                a{
+                    text-decoration: none;
+                    @include btn(none, $bg-three);
+                    border-radius: 0.5rem;
+                    @include font(1rem, 500);
+                    &.yt{
+                        background-color: #dc2626;
+                        margin-right: 1rem;
+                    }
+                    &.sr{
+                        background-color: $green;
+                    }
+                }
+            }
+        }
+        .child2{
+            width: 30%;
+            @include font(1rem, 500);
+        }
+        .child3{
+            width: 30%;
+            background-color: $bg-sec;
+            border-radius: 1rem;
+            transform: translateY(-2rem);
+            box-shadow: $shadow2;
+            padding: 0 2rem;
+            h2{
+                padding-bottom: 1rem;
+                @include font(1.5rem, 600);
+                border-bottom: 5px solid $fgray;
+            }
+            h5{
+                @include font(1rem, 500)
+            }
+            .card{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .col1{
+                    width: 50%;
+                }
+                .col2{
+                    width: 50%;
+                    h5{
+                        text-align: end;
+                    }
+                }
+                h5{
+                    margin: 0.5rem 0;
+                    border-bottom: solid 2px $fgray;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px){
+    section{
+        .container{
+            .child1{
+                width: 100%;
+            }
+            .child2{
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            .child3{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    
+}
+@media screen and (max-width: 640px){
+    
+}
+@media screen and (max-width: 500px){
+   
+}
+@media screen and (max-width: 380px){
+   
+}

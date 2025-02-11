@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+$bg-main: #f4f2ee;
+$bg-sec:#f9fafb;
+$bg-three: #fcfcfc;
+$orange: #f29724;
+$green: #21ba75;
+$green2: #059669;
+$blue: #1d4ed8;
+$gray: rgb(107, 114, 128);
+$fgray: rgba(107, 114, 128, 0.3);
+$w-full: 100%;
+$transition:all 0.3s;
+$shadow1: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+$shadow2: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+
+@mixin font($size, $weight ){
+    font-family: cursive;
+    font-size: $size;
+    line-height: 1.75rem;
+    font-weight: $weight;
+}
+
+@mixin btn($border, $color ){
+    border: $border ;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    color: $color;
+}
+
+section{
+
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 2rem;
+        justify-content: space-evenly;
+        .item{
+            width: 23%;
+            background-color: $bg-three;
+            padding: 1rem 3rem;
+            margin: 4rem 1px 2rem 0;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: $shadow1;
+            transition: $transition;
+            
+                .pic{
+                    height: 8rem;
+                    position: relative;
+                    img{
+                        border-radius: 50%;
+                        width: 100%;
+                        box-shadow: $shadow2;
+                        transform: translateX(-50%) rotate(0);
+                        position: absolute;
+                        top: -50%;
+                        left: 50%;
+                        transition: $transition;
+                    }
+                }
+            h3{
+                @include font(1.25rem, 600);
+                letter-spacing: 0.05em;
+                margin: 0;
+            }
+            h5{
+                margin: 0;
+                @include font(1rem, 500);
+                color: $green2;
+            }
+            &:hover{
+                transform: scale(1.05);
+                box-shadow: $shadow2;
+                img{
+                    transform: translateX(-50%) rotate(360deg);
+                }
+            }
+            button {
+                @include btn(none, $bg-main);
+                background-color: $green;
+                padding: 0.5rem 2rem;
+                margin-top: 1rem;
+                @include font(1rem, 600);
+                transition: $transition;
+                a{
+                    text-decoration: none;
+                    color: $bg-three;
+                }
+                &:hover{
+                    transform:scale(1.05);
+                    background-color: $green2;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    section{
+        .container{
+            .item{
+                width: 33%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    section{
+        .container{
+            .item{
+                width: 45%;
+                .pic{
+                    height: 6rem;
+                    img{
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px){
+    section{
+        .container{
+            .item{
+                width: 80%;
+                .pic{
+                    height: 10rem;
+                    img{
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    section{
+        .container{
+            .item{
+                width: 80%;
+                .pic{
+                    height: 8rem;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 380px){
+    section{
+        .container{
+            .item{
+                width: 90%;
+                .pic{
+                    height: 6rem;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

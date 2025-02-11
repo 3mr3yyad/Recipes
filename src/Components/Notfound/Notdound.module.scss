@@ -1,0 +1,30 @@
+$green2: #059669;
+$orange: #f29724;
+
+@mixin font($size, $weight ){
+    font-family: cursive;
+    font-size: $size;
+    line-height: 1.75rem;
+    font-weight: $weight;
+}
+
+div.ntf{
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    h2{
+        margin-top: 30vh;
+        @include font(2.5rem,700 );
+        background-image: linear-gradient(to right, $orange, #ca1023c4, #c90519);
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 2rem;
+        padding: 1rem
+    }
+    a{
+        @include font(1rem,500 );
+        color: $green2;
+    }
+}
